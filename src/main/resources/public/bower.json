@@ -1,0 +1,29 @@
+{
+  "name": "Selemene",
+  "version": "0.0.0",
+  "license": "MIT",
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ],
+  "dependencies": {   
+    "grunt-contrib-watch": "^1.0.0",
+    "grunt": "^1.0.1",
+    "grunt-contrib-jshint": "^1.0.0",
+    "bootstrap": "^3.3.7",
+    "jquery": "^3.2.1",
+    "angular": "^1.6.5",
+    "jQuery-QueryBuilder": "^2.4.4"
+  },
+  "overrides": {
+    "bootstrap": {
+      "main": [
+        "dist/css/bootstrap.css",
+        "dist/js/bootstrap.js"
+      ]
+    }
+  }
+}
