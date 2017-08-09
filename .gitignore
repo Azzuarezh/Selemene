@@ -5,6 +5,17 @@ ehthumbs.db
 # Folder config file
 Desktop.ini
 
+# ignoring node and node_modules. its because the app will download the dependency
+src/main/resources/public/node/
+src/main/resources/public/node_modules/
+target
+
+
+# ignoring bower_components. its because the app will download the bower dependency
+src/main/resources/public/bower_components/
+
+
+
 # Recycle Bin used on file shares
 $RECYCLE.BIN/
 
