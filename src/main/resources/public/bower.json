@@ -29,9 +29,15 @@
     "angular-ui-select": "^0.19.4",
     "angular-sanitize": "^1.5.8",
     "sockjs": "^0.3.4",
-    "font-mfizz": "^2.0.1"
+    "font-mfizz": "^2.0.1",
+    "metisMenu": "metismenu#^2.7.4"
   },
   "overrides": {
+    "angular": {
+      "dependencies": {
+        "jquery": "^3.2.1"
+      }
+    },
     "bootstrap": {
       "main": [
         "dist/css/bootstrap.css",
@@ -50,8 +56,8 @@
     "sockjs": {
       "main": "sockjs.js"
     },
-    "font-mfizz":{
-    	"main":"css/font-mfizz.css"
+    "font-mfizz": {
+      "main": "css/font-mfizz.css"
     }
   },
   "homepage": "https://github.com/Azzuarezh/Selemene",
@@ -59,5 +65,8 @@
     "Azzuarezh <spotlight.magic@gmail.com>"
   ],
   "description": "",
-  "main": ""
+  "main": "",
+  "resolutions": {
+    "jquery": "^3.2.1"
+  }
 }

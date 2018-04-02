@@ -9,10 +9,10 @@ module.exports = function(grunt) {
         }
       }
     },
-    watch: {
-      files: ['<%= jshint.files %>'],
-      tasks: ['jshint','wiredep'],
-      options: {
+    watch: {      
+    	files:['Gruntfile.js','../static/*.html','bower.json','package.json'],
+    	tasks: ['wiredep'],
+    	options: {
                 livereload: true,
               }
     },

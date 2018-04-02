@@ -18,19 +18,14 @@ public class Driver {
 		DriverManagerDataSource dsm = new DriverManagerDataSource();
 		dsm.setUsername(username);
 		dsm.setPassword(password);
-		switch (DBType) {
-		case GlobalVariable.DB_SQL_SERVER:
+		if(GlobalVariable.DB_SQL_SERVER.equalsIgnoreCase(DBType)){
 			dsm.setDriverClassName(GlobalVariable.DRIVERCLASS_SQL_SERVER);
-			dsm.setUrl(String.format("jdbc:jtds:sqlserver://%s:%d;databaseName=master", serverName, port==0?1433:port));			
-			break;
-		case GlobalVariable.DB_POSTGRESQL:
-			dsm.setDriverClassName(GlobalVariable.DRIVERCLASS_POSTGRE);
-			dsm.setUrl(String.format("jdbc:postgresql://%s:%d/Cronos?tcpKeepAlive=true&autoReconnect=true", serverName, port==0?5432:port));			
-			break;
-
-		default:
-			break;
+			dsm.setUrl(String.format("jdbc:jtds:sqlserver://%s:%d;databaseName=master", serverName, port==0?1433:port));
 		}
+		else if(GlobalVariable.DB_POSTGRESQL.equalsIgnoreCase(DBType)){
+			dsm.setDriverClassName(GlobalVariable.DRIVERCLASS_POSTGRE);
+			dsm.setUrl(String.format("jdbc:postgresql://%s:%d/Cronos?tcpKeepAlive=true&autoReconnect=true", serverName, port==0?5432:port));
+		}		
 		this.dataSource = dsm;
 	}
 	

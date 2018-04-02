@@ -21,7 +21,7 @@ import com.muhammadthahir.Selemene.config.db.Connection;
 public class RestControllerClass {
 	private CommonQuery cQy = new CommonQuery();
 	
-	private String ServerName = "10.50.50.19"; 
+	private String ServerName = "localhost"; 
 	
 	@RequestMapping(value="/getListOfDatabases")
 	public List<Map<String,Object>> getListOfDataBases(HttpSession session) throws SQLException{
@@ -32,23 +32,18 @@ public class RestControllerClass {
 		if(session.getAttribute(GlobalVariable.PARAM_DB_TYPE) == null || session.getAttribute(GlobalVariable.PARAM_DB_TYPE) == "" ){			
 			session.setAttribute(GlobalVariable.PARAM_DB_TYPE, GlobalVariable.DEFAULT_DB);
 		}
+		
 		String dbType = session.getAttribute(GlobalVariable.PARAM_DB_TYPE).toString();
-		switch (dbType) {
-		case GlobalVariable.DB_SQL_SERVER:
+		if(GlobalVariable.DB_SQL_SERVER.equalsIgnoreCase(dbType)){
 			userName = "sa";
-			pass = "123456";			
-			break;
-		case GlobalVariable.DB_POSTGRESQL:
+			pass = "123456";						
+		}
+		else if(GlobalVariable.DB_POSTGRESQL.equalsIgnoreCase(dbType)){
 			userName = "postgres";
 			pass = "admin";			
-			break;
-		default:
-			break;
-		}
-		
+		}		
 		Connection  coreConnect = new Connection(ServerName, userName, pass, 0, dbType);
-		sql = cQy.getDatabases(dbType);
-		System.out.println("the sql nya : " + sql);
+		sql = cQy.getDatabases(dbType);		
 		return coreConnect.getQuery_Result(sql);
 		
 	}
@@ -67,17 +62,13 @@ public class RestControllerClass {
 			session.setAttribute(GlobalVariable.PARAM_DB_TYPE, GlobalVariable.DEFAULT_DB);
 		}
 		String dbType = session.getAttribute(GlobalVariable.PARAM_DB_TYPE).toString();
-		switch (dbType) {
-		case GlobalVariable.DB_SQL_SERVER:
+		if(GlobalVariable.DB_SQL_SERVER.equalsIgnoreCase(dbType)){
 			userName = "sa";
-			pass = "123456";			
-			break;
-		case GlobalVariable.DB_POSTGRESQL:
+			pass = "123456";						
+		}
+		else if(GlobalVariable.DB_POSTGRESQL.equalsIgnoreCase(dbType)){
 			userName = "postgres";
 			pass = "admin";			
-			break;
-		default:
-			break;
 		}
 		
 		Connection  coreConnect = new Connection(ServerName, userName, pass, 0, dbType);
