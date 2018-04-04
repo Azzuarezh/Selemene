@@ -25,7 +25,7 @@ app
 			scope.getListOfDbObject = function(dbName,type){
 				//request ajax
 				var listOfObj =[];
-				var tblService = $resource('/getListOfDbObject',{DB_Name:dbName,ObjectType:type});
+				var tblService = $resource('/getListOfDbObject',{dbname:dbName,objectType:type});
 				var tbls = tblService.query();
 				//ajax function for db
 				

@@ -53,8 +53,8 @@ public class RestControllerClass {
 	@RequestMapping(value="/getListOfDbObject")
 	public List<Map<String, Object>> getListOfDbObject(
 			HttpSession session,
-			@RequestParam(value=GlobalVariable.PARAM_DB_NAME) String DbName,
-			@RequestParam(value=GlobalVariable.PARAM_OBJECT_TYPE) String type) throws SQLException{		
+			@RequestParam(value="dbname") String DbName,
+			@RequestParam(value="objectType") String type) throws SQLException{		
 		String userName="";
 		String pass ="";
 		String sql="";

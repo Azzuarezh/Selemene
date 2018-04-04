@@ -40,6 +40,10 @@
 			</div>
 		</div>
 	</div>
+	<div ng-controller="dialogController">
+		<dialog-directive></dialog-directive>
+	</div>
+	
 
 	<!-- bower:js -->
 	<script src="/bower_components/jquery/dist/jquery.js"></script>
@@ -62,9 +66,18 @@
 	<script src="/bower_components/sockjs/sockjs.js"></script>
 	<script src="/bower_components/metisMenu/dist/metisMenu.js"></script>
 	<!-- endbower -->
+      	
+      	<!-- core app -->
       	<script src="/lib/app.js"></script>
+      	
+      	<!-- controller -->
       	<script src="/lib/controllers/left.js"></script>
-      	<script src="/lib/directives/top_directives.js"></script>
-      	<script src="/lib/directives/left_directives.js"></script>              
+      	<script src="/lib/controllers/dialog.js"></script>
+      	
+      	<!-- directives -->
+      	<script src="/lib/directives/left_directives.js"></script>
+      	<script src="/lib/directives/top_directives.js"></script>      	
+      	<script src="/lib/directives/dialog_directives.js"></script>
+      	              
 </body>
 </html>
