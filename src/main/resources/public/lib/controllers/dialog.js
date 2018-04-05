@@ -7,7 +7,13 @@ app
 	$scope.dialogs=[{
 		id:'connect',
 		iconTitle:'fa fa-plug',
-		title:'Connect'
+		title:'Connect',
+		btnControl:[{
+			btnId:'testConnection',btnIcon:'fa fa-exclamation',btnText:'Test',btnClass:'default'
+		},
+		{
+			btnId:'connect',btnIcon:'fa fa-plug',btnText:'Connect',btnClass:'danger'
+		}]
 	},
 	{
 		id:'export',

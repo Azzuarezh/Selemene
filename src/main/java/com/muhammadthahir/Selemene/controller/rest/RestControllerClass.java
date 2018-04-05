@@ -1,16 +1,15 @@
 package com.muhammadthahir.Selemene.controller.rest;
 
 import java.sql.SQLException;
-import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
 
 import javax.servlet.http.HttpSession;
 
-import org.springframework.beans.factory.annotation.Autowired;
+
+import org.springframework.web.bind.annotation.CrossOrigin;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
-import org.springframework.web.bind.annotation.ResponseBody;
 import org.springframework.web.bind.annotation.RestController;
 
 import com.muhammadthahir.Selemene.config.GlobalVariable;
@@ -23,6 +22,7 @@ public class RestControllerClass {
 	
 	private String ServerName = "localhost"; 
 	
+	@CrossOrigin(origins = "http://localhost:8000")
 	@RequestMapping(value="/getListOfDatabases")
 	public List<Map<String,Object>> getListOfDataBases(HttpSession session) throws SQLException{
 		
@@ -49,7 +49,7 @@ public class RestControllerClass {
 	}
 			
 	
-	
+	@CrossOrigin(origins = "http://localhost:8000")
 	@RequestMapping(value="/getListOfDbObject")
 	public List<Map<String, Object>> getListOfDbObject(
 			HttpSession session,
@@ -80,7 +80,7 @@ public class RestControllerClass {
 		return coreConnect.getQuery_Result(sql);
 	}
 	
-		
+	@CrossOrigin(origins = "http://localhost:8000")	
 	@RequestMapping(value="/switchDBDriver")
 	public String changeDefaultDB(@RequestParam(value=GlobalVariable.PARAM_DB_TYPE, required=false) String db_type,HttpSession session){
 		session.setAttribute(GlobalVariable.PARAM_DB_TYPE, db_type);

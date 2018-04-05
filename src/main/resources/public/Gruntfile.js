@@ -10,12 +10,18 @@ module.exports = function(grunt) {
       }
     },
     watch: {      
-    	files:['Gruntfile.js','../static/*.html','bower.json','package.json'],
+    	files:['Gruntfile.js',
+    	       '../static/*.html',
+    	       'bower.json',
+    	       'package.json',
+    	       'lib/**/*.js',
+    	       'template/**/*.html'
+    	       ],
     	tasks: ['wiredep'],
     	options: {
                 livereload: true,
               }
-    },
+    },    
     wiredep:{
     	 task: {    		   
     		 	expand:true,
@@ -30,6 +36,6 @@ module.exports = function(grunt) {
   grunt.loadNpmTasks('grunt-contrib-watch');
   grunt.loadNpmTasks('grunt-wiredep');
 
-  grunt.registerTask('default', ['wiredep']);
+  grunt.registerTask('default', ['wiredep','watch']);
 
 };
