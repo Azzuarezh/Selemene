@@ -8,7 +8,7 @@ Desktop.ini
 # ignoring node and node_modules. its because the app will download the dependency
 src/main/resources/public/node/
 src/main/resources/public/node_modules/
-target
+target/
 
 
 # ignoring bower_components. its because the app will download the bower dependency
