@@ -36,6 +36,6 @@ module.exports = function(grunt) {
   grunt.loadNpmTasks('grunt-contrib-watch');
   grunt.loadNpmTasks('grunt-wiredep');
 
-  grunt.registerTask('default', ['wiredep','watch']);
+  grunt.registerTask('default', ['wiredep']);
 
 };
