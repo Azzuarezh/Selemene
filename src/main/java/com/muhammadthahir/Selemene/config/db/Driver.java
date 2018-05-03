@@ -12,10 +12,28 @@ import com.muhammadthahir.Selemene.config.GlobalVariable;
 
 public class Driver {
 
+	@Override
+	public String toString() {
+		try {
+			return "Driver [dataSource=" + dataSource + ", getDataSource()=" + getDataSource()
+					+ ", checkConnectionIsOpen()=" + checkConnectionIsOpen() + ", getClass()=" + getClass()
+					+ ", hashCode()=" + hashCode() + ", toString()=" + super.toString() + "]";
+		} catch (SQLException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+			return null;
+		}		
+	}
+
 	private DataSource dataSource;
 	
 	public Driver(String serverName, String username, String password, String DBType, int port){
 		DriverManagerDataSource dsm = new DriverManagerDataSource();
+		System.out.println("serverName : " +serverName);
+		System.out.println("port : " +port);
+		System.out.println("dbtype : " +DBType);
+		System.out.println("username : " +username);		
+		System.out.println("password : " +password);
 		dsm.setUsername(username);
 		dsm.setPassword(password);
 		if(GlobalVariable.DB_SQL_SERVER.equalsIgnoreCase(DBType)){

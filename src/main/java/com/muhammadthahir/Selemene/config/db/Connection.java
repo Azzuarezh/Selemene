@@ -28,11 +28,17 @@ public class Connection {
 	
 	public Connection(String serverName,String userName, String pass, int port,String dB_Type) {		
 		DB_Type = dB_Type;
-		this.driver = new Driver(serverName, userName, pass, dB_Type, port);
+		this.driver = new Driver(serverName, userName, pass, dB_Type, port);		
 		this.jdbcTemplate = new JdbcTemplate(driver.getDataSource());
 		
 	}
 	
+	@Override
+	public String toString() {
+		return "Connection [DB_Type=" + DB_Type + ", driver=" + driver + ", jdbcTemplate=" + jdbcTemplate
+				+ ", Query_Result=" + Query_Result + ", connectionOpen=" + connectionOpen + "]";
+	}
+
 	public Driver getDriver() {
 		return driver;
 	}
