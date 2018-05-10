@@ -20,7 +20,11 @@ public class CommonQuery implements CommonQueryInterface {
 		}
 		else if(GlobalVariable.DB_POSTGRESQL.equalsIgnoreCase(DBType)){
 			query = "select datname as \"DATABASE_NAME\" from pg_database where datistemplate = false";
-		}			
+		}
+		else if(GlobalVariable.DB_MYSQL.equalsIgnoreCase(DBType)){
+			query="show databases";
+		}
+		
 		return query;
 	}
 

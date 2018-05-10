@@ -39,10 +39,17 @@ public class DatabaseObject extends GlobalVariable {
 		try {
 			response.put("connect", coreConnect.getDriver().checkConnectionIsOpen());
 		} catch (SQLException e) { 
-			response.put("connect", false);
+			response.put("connect", false);			
 			response.put("errMessage", e.getMessage());
 			e.printStackTrace();
 		}
 		return response;
-	}			
+	}
+	
+	@RequestMapping(value="/defaultDB", method=RequestMethod.GET)
+	public @ResponseBody Map<String,Object> checkDefaultDb(HttpSession session){										
+		Map<String,Object> response = new HashMap<>();
+		response.put("default", DEFAULT_DB);
+		return response;
+	}
 }

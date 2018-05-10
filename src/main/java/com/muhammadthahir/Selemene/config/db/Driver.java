@@ -43,7 +43,12 @@ public class Driver {
 		else if(GlobalVariable.DB_POSTGRESQL.equalsIgnoreCase(DBType)){
 			dsm.setDriverClassName(GlobalVariable.DRIVERCLASS_POSTGRE);
 			dsm.setUrl(String.format("jdbc:postgresql://%s:%d/Cronos?tcpKeepAlive=true&autoReconnect=true", serverName, port==0?5432:port));
-		}		
+		}
+		else if(GlobalVariable.DB_MYSQL.equalsIgnoreCase(DBType)){
+			dsm.setDriverClassName(GlobalVariable.DRIVERCLASS_MYSQL);
+			dsm.setUrl(String.format("jdbc:mysql://%s:%d", serverName, port==0?3306:port));
+		}
+		
 		this.dataSource = dsm;
 	}
 	
