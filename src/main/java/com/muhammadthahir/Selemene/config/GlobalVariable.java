@@ -16,7 +16,7 @@ public class GlobalVariable {
 	public static final String DRIVERCLASS_SQL_SERVER = "net.sourceforge.jtds.jdbc.Driver";
 	public static final String DRIVERCLASS_POSTGRE="org.postgresql.Driver";
 	public static final String DRIVERCLASS_MYSQL="com.mysql.jdbc.Driver";
-	public static final String DEFAULT_DB = DB_SQL_SERVER;
+	public static final String DEFAULT_DB = DB_MYSQL;
 	
 	/*global variable*/
 	public static final String PARAM_DB_TYPE = "DBTYPE";
